@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/standard_padding"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/resultTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:padding="@dimen/standard_padding"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/agePlusBtn"
+        app:layout_constraintTop_toBottomOf="@id/resultTv" />
+
+    <Button
+        android:id="@+id/agePlusBtn"
+        android:text="+"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:layout_marginEnd="@dimen/standard_padding"
+        android:layout_marginStart="@dimen/standard_padding"
+        app:layout_constraintTop_toBottomOf="@id/resultTv"
+        app:layout_constraintStart_toEndOf="@id/ageLabel"
+        app:layout_constraintEnd_toStartOf="@id/ageIL"
+        android:layout_width="@dimen/btn_height"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/ageIL"
+        android:layout_width="0dp"
+        app:layout_constraintTop_toTopOf="@id/agePlusBtn"
+        app:layout_constraintBottom_toBottomOf="@id/agePlusBtn"
+        app:layout_constraintStart_toEndOf="@id/agePlusBtn"
+        app:layout_constraintEnd_toStartOf="@id/ageMinusBtn"
+        android:layout_height="60dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ageEt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/ageMinusBtn"
+        android:text="-"
+        android:layout_marginTop="@dimen/standard_padding"
+        app:layout_constraintTop_toBottomOf="@id/resultTv"
+        app:layout_constraintStart_toEndOf="@id/ageIL"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/standard_padding"
+        android:layout_width="@dimen/btn_height"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/heightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Height \nin m"
+        android:padding="@dimen/standard_padding"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/agePlusBtn"
+        app:layout_constraintTop_toBottomOf="@id/ageLabel" />
+
+    <Button
+        android:id="@+id/heightPlusBtn"
+        android:text="+"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:layout_marginEnd="@dimen/standard_padding"
+        app:layout_constraintTop_toBottomOf="@id/agePlusBtn"
+        app:layout_constraintStart_toEndOf="@id/heightLabel"
+        app:layout_constraintEnd_toStartOf="@id/heightIL"
+        android:layout_width="@dimen/btn_height"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style ="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/heightIL"
+        app:layout_constraintTop_toBottomOf="@id/ageIL"
+        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        app:layout_constraintTop_toTopOf="@id/heightPlusBtn"
+        app:layout_constraintStart_toEndOf="@id/heightPlusBtn"
+        app:layout_constraintEnd_toStartOf="@id/heightMinusBtn"
+        app:layout_constraintBottom_toBottomOf="@id/heightPlusBtn"
+        android:layout_height="60dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/heightEt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/heightMinusBtn"
+        android:text="-"
+        android:layout_marginTop="@dimen/standard_padding"
+        app:layout_constraintTop_toBottomOf="@id/ageMinusBtn"
+        app:layout_constraintStart_toEndOf="@id/heightIL"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/standard_padding"
+        android:layout_width="@dimen/btn_height"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/weightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight \nin Kg"
+        android:padding="@dimen/standard_padding"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/weightPlusBtn"
+        app:layout_constraintTop_toBottomOf="@id/heightLabel" />
+
+    <Button
+        android:id="@+id/weightPlusBtn"
+        android:text="+"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:layout_marginEnd="@dimen/standard_padding"
+        app:layout_constraintTop_toBottomOf="@id/heightPlusBtn"
+        app:layout_constraintStart_toEndOf="@id/weightLabel"
+        app:layout_constraintEnd_toStartOf="@id/weightIL"
+        android:layout_width="@dimen/btn_height"
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/weightIL"
+        app:layout_constraintTop_toBottomOf="@id/heightIL"
+        app:layout_constraintStart_toEndOf="@id/weightPlusBtn"
+        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@id/weightMinusBtn"
+        android:layout_height="60dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/weightEt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/weightMinusBtn"
+        android:text="-"
+        android:layout_marginTop="@dimen/standard_padding"
+        app:layout_constraintTop_toBottomOf="@id/heightMinusBtn"
+        app:layout_constraintStart_toEndOf="@id/weightIL"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/standard_padding"
+        android:layout_width="@dimen/btn_height"
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calculateBtn"
+        android:text="Calculate"
+        app:layout_constraintTop_toBottomOf="@id/weightIL"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
