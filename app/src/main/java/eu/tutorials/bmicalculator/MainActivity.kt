@@ -22,23 +22,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        val ageEt = binding.ageEt
         val weightEt = binding.weightEt
         val heightEt = binding.heightEt
-        binding.agePlusBtn.setOnClickListener {
-            if (ageEt.text.toString().isNotEmpty()) {
-                ageValue = ageEt.text.toString().toInt()
-            }
-            ageValue++
-            ageEt.setText(ageValue.toString())
-        }
-        binding.ageMinusBtn.setOnClickListener {
-            if (ageEt.text.toString().isNotEmpty()) {
-                ageValue = ageEt.text.toString().toInt()
-            }
-            ageValue--
-            ageEt.setText(ageValue.toString())
-        }
 
         binding.heightPlusBtn.setOnClickListener {
             if (heightEt.text.toString().isNotEmpty()) {
@@ -105,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         } else if (bmi.compareTo(25f) > 0 && bmi.compareTo(30f) <= 0
         ) {
             bmiLabel = "Overweight"
-            bmiDescription = "Oops! You really need to take care of your yourself! Workout maybe!"
+            bmiDescription = "Oops! You really need to take care of yourself! Workout maybe!"
         } else if (bmi.compareTo(30f) > 0 && bmi.compareTo(35f) <= 0
         ) {
             bmiLabel = "Obese Class | (Moderately obese)"
