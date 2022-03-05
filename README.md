@@ -11,7 +11,7 @@ An App for calculating body mass index
 
    <td>
 
-![s](screenshots/screen_1.png)
+![s](screenshots/screen1.png)
    </td>
 
   </tr>
